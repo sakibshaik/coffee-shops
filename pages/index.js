@@ -21,7 +21,21 @@ export default function Home () {
           <div className={styles.heroImage}>
           <Image src="/static/hero-image.png" width={700} height={400}/>
           </div>
-          <Card name='Fltr' imgUrl='/static/hero-image.png' href='/coffee-store/fltr' />
+          <div className={styles.cardLayout}>
+          <Card
+              name='Fltr'
+              imgUrl='/static/hero-image.png'
+              href='/coffee-store/fltr'
+              className={styles.card}
+          />
+
+              <Card
+                  name='Fltr'
+                  imgUrl='/static/hero-image.png'
+                  href='/coffee-store/fltr'
+                  className={styles.card}
+              />
+          </div>
       </main>
 
       <footer className={styles.footer}>
