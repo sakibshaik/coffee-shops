@@ -31,18 +31,23 @@ export default function Home (props) {
           <div className={styles.heroImage}>
           <Image src="/static/hero-image.png" width={700} height={400}/>
           </div>
-          <div className={styles.cardLayout}>
-              {props.coffeeStores.map((store) => {
-                  return <Card
-                      key = {store.id}
-                      name={store.name}
-                      imgUrl={store.imgUrl}
-                      href={`/coffee-store/${store.id}`}
-                      className={styles.card}
-                  />
-              })}
+          {props.coffeeStores.length && (
+              <>
+              <h2 className={styles.heading2}> Toronto Coffee shops</h2>
+              <div className={styles.cardLayout}>
+          {props.coffeeStores.map((store) => {
+              return <Card
+              key = {store.id}
+              name={store.name}
+              imgUrl={store.imgUrl}
+              href={`/coffee-store/${store.id}`}
+              className={styles.card}
+              />
+          })}
 
-          </div>
+              </div>
+              </>
+              )}
       </main>
 
       <footer className={styles.footer}>
