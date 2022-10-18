@@ -27,7 +27,7 @@ export default function Home (props) {
             if (latLong) {
                 try {
                     console.log(latLong)
-                    const fetchedCoffeeStores = await fetchCoffeeStores(latLong, 'coffee',6);
+                    const fetchedCoffeeStores = await fetchCoffeeStores(latLong, 'coffee',12);
                     setCoffeeStores(fetchedCoffeeStores)
                     //set coffee stores
                 } catch (error) {
