@@ -20,13 +20,16 @@ export function  getStaticPaths(){
             {params: {id:"0"}},
             {params: {id:"1"}},
         ],
-        fallback: false,
+        fallback: true,
     }
 }
 
 
 const CoffeeStore = (props) => {
     const router = useRouter()
+    if(router.isFallback){
+        return <div>loading ...</div>
+    }
     return<div>Coffee Store Page {router.query.id}
     <Link href={"/"}><a>Back to Home</a></Link>
     <Link href={"/coffee-store/dynamic"}><a>Go to Page Dynamic</a></Link>
